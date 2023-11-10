@@ -3,12 +3,12 @@
 <h1>Home</h1>
 <p><%= startingContent %></p>
 
+ <!-- for (i = 0; i < composeObject.length; i++) {  -->
 
+<% composeObject.forEach(function(composeObject){ %>
 
-<% for (i = 0; i < composeObject.length; i++) { %>
+    <% console.log(composeObject.composeTitle); %>
 
-        <% console.log(composeObject[i].composeTitle); %>
-    
-<% } %>
-
+<% }) %>
+        
 <%- include('partials/footer'); -%>
