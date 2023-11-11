@@ -6,7 +6,9 @@
  <!-- for (i = 0; i < composeObject.length; i++) {  -->
 
 <% composeObject.forEach(function(composeObject){ %>
-
+    <h1><%= composeObject.composeTitle %></h1>
+    <p><%= composeObject.composePost %></p>
+    
     <% console.log(composeObject.composeTitle); %>
 
 <% }) %>
