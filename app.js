@@ -1,5 +1,5 @@
 //jshint esversion:6
-
+// require modules
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-function truncateText(text, maxLength){
+function truncateText(text, maxLength){ // yruncate homepaage text
   if(text.length > maxLength){
     return text.substring(0, maxLength) + "...";
   } else {
@@ -31,7 +31,7 @@ function truncateText(text, maxLength){
 app.locals.truncateText = truncateText;
 
 
-app.get("/", function(req, res){
+app.get("/", function(req, res){  // home route
 
   res.render("home", {
     startingContent: homeStartingContent,
