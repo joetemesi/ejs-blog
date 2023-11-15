@@ -3,7 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-const { get } = require("lodash");
+// const { get } = require("lodash");
 const _ = require('lodash');
 
 const port = 3000;
@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-function truncateText(text, maxLength){ // yruncate homepaage text
+function truncateText(text, maxLength){ // yruncate homepage text
   if(text.length > maxLength){
     return text.substring(0, maxLength) + "...";
   } else {
@@ -62,7 +62,7 @@ app.get("/compose", function(req, res){
 
 })
 
-app.post("/compose", function(req,res){
+app.post("/compose", function(req,res){ //handle compose route POST request
 
   const composeObject = {
     composeTitle:req.body.composeTitle1,
